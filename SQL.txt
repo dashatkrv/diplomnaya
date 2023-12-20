@@ -1,7 +1,7 @@
 SELECT "Couriers".login,
     COUNT(*)
 FROM "Couriers"
-INNER JOIN "Orders" ON "Couriers"."courierId"
+INNER JOIN "Orders" ON "Orders"."courierId"= "Couriers".id
 WHERE "Orders"."inDelivery"= TRUE
 GROUP by "Couriers".login;
 
